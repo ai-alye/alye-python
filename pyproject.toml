@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "alye"
+dynamic = ["version"]
+description = "Alye: cost, latency and error tracking for every LLM call your services make."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Onruyl Private Limited", email = "info@alye.ai" }]
+keywords = ["llm", "llm-observability", "llm-monitoring", "ai-observability", "observability", "opentelemetry", "openai", "anthropic", "gemini", "llm-cost", "tracing"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: System :: Monitoring",
+  "Topic :: Software Development :: Libraries",
+  "Typing :: Typed",
+]
+# No required dependencies: the SDK uses only the standard library and patches
+# provider SDKs only if they are already installed.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "openai", "anthropic", "google-genai", "httpx", "langchain-core"]
+
+[project.scripts]
+alye-devserver = "alye.devserver:main"
+
+[tool.hatch.version]
+path = "src/alye/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/alye"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[project.urls]
+Homepage = "https://www.alye.ai"
+Documentation = "https://www.alye.ai/docs"
