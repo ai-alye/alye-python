@@ -51,3 +51,5 @@ asyncio_default_fixture_loop_scope = "function"
 [project.urls]
 Homepage = "https://www.alye.ai"
 Documentation = "https://www.alye.ai/docs"
+Repository = "https://github.com/ai-alye/alye-python"
+Issues = "https://github.com/ai-alye/alye-python/issues"
