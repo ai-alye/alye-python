@@ -2,6 +2,8 @@
 
 # alye (Python)
 
+[Website](https://www.alye.ai) · [Docs](https://www.alye.ai/docs) · [LLM prices](https://www.alye.ai/models) · [Sign up free](https://app.alye.ai/register)
+
 Records every LLM call your services make: model, tokens, latency, time to first token, errors and retries. You add two lines at startup; calls through the official OpenAI, Anthropic and Google GenAI clients are recorded automatically.
 
 ```bash
